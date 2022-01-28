@@ -14,8 +14,9 @@ import { useNavigation } from "@react-navigation/native";
 export function SignIn () {
   const navigation = useNavigation()
 
-  const handleSignIn = () => {
-    navigation.navigate('Home')
+  function handleSignIn() {
+    const result = 'Home' as any;
+    navigation.navigate(result) 
   }
 
   return (
