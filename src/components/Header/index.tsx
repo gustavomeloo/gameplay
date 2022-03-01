@@ -50,10 +50,11 @@ export function Header({title, action}: Props) {
       </Text>
 
       {
-        action && 
+        action ? 
         <View>
           {action}
-        </View>
+        </View> :
+        <View style={{width : 24}}/>
       }
       
 
