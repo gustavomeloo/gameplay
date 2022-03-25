@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useCallback} from "react";
 import {
   View,
   FlatList
@@ -15,7 +15,7 @@ import { Load } from "../../components/Load";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { styles } from "./styles";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { COLLECTION_APPOINTMENTS } from "../../configs/database";
 export function Home () {
 
@@ -29,8 +29,8 @@ export function Home () {
     categoryId === category ? setCategory('') : setCategory(categoryId)
   }
 
-  function handleAppointmentDetails() {
-    navigation.navigate('AppointmentDetails')
+  function handleAppointmentDetails(guildSelected: AppointmentProps) {
+    navigation.navigate('AppointmentDetails', { guildSelected })
   }
   function handleAppointmentCreate() {
     navigation.navigate('AppointmentCreate')
@@ -52,6 +52,9 @@ export function Home () {
     
   }
 
+  useFocusEffect(useCallback(() => {
+    loadAppointments()
+  }, [category]))
 
 
   return (
@@ -65,7 +68,7 @@ export function Home () {
       {
         loading ? <Load/> :
         <>
-          <ListHeader title="Partidas Agendadas" subtitle="Total 6" /> 
+          <ListHeader title="Partidas Agendadas" subtitle={`Total ${appointments.length}`} /> 
 
           <FlatList  
             data={appointments}
@@ -73,7 +76,7 @@ export function Home () {
             renderItem={({item}) => (
               <Appointment 
                 data={item}
-                onPress={handleAppointmentDetails}
+                onPress={() => handleAppointmentDetails(item)}
                 
                 /> 
               )}

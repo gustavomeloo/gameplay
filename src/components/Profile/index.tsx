@@ -1,19 +1,34 @@
 import React from "react";
 
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, Alert } from 'react-native'
 import { useAuth } from "../../hooks/auth";
 import { Avatar } from "../Avatar";
-
 import { styles } from "./styles";
 
 export function Profile() {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
+  function handleSignOut() {
+    Alert.alert('Logout', 'Deseja sair do Gameplay',
+    [
+      {
+        text: 'Não',
+        style: 'cancel'
+      },
+      {
+        text: 'Sim',
+        onPress: () => signOut()
+      }
+    ])
+  }
   return(
     <View style={styles.container} >
 
-      <Avatar urlImage={user.avatar} />
 
+      <TouchableOpacity onPress={handleSignOut}>
+        <Avatar urlImage={user.avatar} />
+      </TouchableOpacity>
+     
       <View>
         <View style={styles.user} >
           <Text style={styles.greeting}>Olá,</Text>
