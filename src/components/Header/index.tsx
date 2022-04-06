@@ -2,13 +2,12 @@ import React, { ReactNode } from 'react'
 
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { BorderlessButton } from 'react-native-gesture-handler'
-
 import { Feather } from '@expo/vector-icons'
 
 import {
   View,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native'
 import { theme } from '../../global/styles/theme'
 import {styles} from './styles'
@@ -31,19 +30,18 @@ export function Header({title, action}: Props) {
   }
 
   return (
-
+    
     <LinearGradient 
       style={styles.container}
       colors={[secondary100, secondary40]} >
+        <TouchableOpacity onPress={handleGoBack} >
+          <Feather 
+            name='arrow-left'
+            size={24}
+            color={heading}
+            />
 
-      <BorderlessButton onPress={handleGoBack} >
-        <Feather 
-          name='arrow-left'
-          size={24}
-          color={heading}
-          />
-
-      </BorderlessButton>
+        </TouchableOpacity>
 
       <Text style={styles.title}>
         {title}

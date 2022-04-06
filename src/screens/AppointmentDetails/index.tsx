@@ -1,7 +1,6 @@
 import React, { useState , useEffect} from "react";
 import { useRoute } from "@react-navigation/native";
 import {Fontisto} from '@expo/vector-icons'
-import { BorderlessButton } from 'react-native-gesture-handler'
 import * as Linking from 'expo-linking'
 
 import {
@@ -11,7 +10,8 @@ import {
   ImageBackground,
   Alert,
   Share,
-  Platform
+  Platform,
+  TouchableOpacity
 } from 'react-native'
 
 import { Background } from "../../components/Background";
@@ -36,7 +36,6 @@ type GuildWidget = {
   name: string
   instant_invite: string
   members: MemberProps[]
-  present_count: number
 
 }
 
@@ -52,6 +51,7 @@ export function AppointmentDetails(){
     try {
       const response = await api.get(`/guilds/${guildSelected.guild.id}/widget.json`)
       setWidget(response.data)
+
       
     } catch  {
       Alert.alert('Verifique as configurações do servidor. Será que o Widget está habilitado?')
@@ -84,13 +84,13 @@ export function AppointmentDetails(){
         title="Detalhes"
         action={
           guildSelected.guild.owner &&
-          <BorderlessButton onPress={handleShareInvitation}>
+          <TouchableOpacity onPress={handleShareInvitation}>
             <Fontisto 
               name="share"
               size={24}
               color={theme.colors.primary}            
             />
-          </BorderlessButton>
+          </TouchableOpacity>
         }
         />
 
@@ -133,7 +133,7 @@ export function AppointmentDetails(){
           guildSelected.guild.owner &&
           <View style={styles.footer} >
             <ButtonIcon title="Entrar na partida" onPress={handleOpenGuild}/>
-        </View>
+          </View>
         }
         
     </Background>

@@ -38,7 +38,7 @@ export function Guilds({ handleGuildSelect }: Props) {
         loading ? <Load /> :
         <FlatList 
           data={guilds}
-          keyExtractor={item=> item.id}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <Guild 
               data={item} 
