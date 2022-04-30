@@ -1,4 +1,4 @@
-<h1 align="center">Gameplay</h1>
+<h1 align="center">Gameplay 🎮</h1>
 
 <p align="center">  
 O "Gameplay" é um App para organizar o que você quer ou vai jogar com seus amigos, ou seja a sua gameplay.<br>
