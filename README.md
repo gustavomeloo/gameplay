@@ -1,8 +1,13 @@
 <h1 align="center">Gameplay 🎮</h1>
 
 <p align="center">  
-O "Gameplay" é um App para organizar o que você quer ou vai jogar com seus amigos, ou seja a sua gameplay.<br>
-O Gameplay será feito em react-native aplicado em TyoeScript, usando inúmeras bibliotecas react-native. Terá tambem uma integração e autenticação com o Aplicativo Discord, em que também utilizaremos o Discord Developer onde criaremos uma application para fazer a integração com a API do Discord, assim fazendo as requisições necessárias para aplicação.
+O "Gameplay" é um App para organizar o que você quer ou vai jogar com seus amigos, ou seja a sua gameplay
+</p>
+<p>
+O Gameplay é um projeto em conjunto com a RocketSeat na 6ª edição da NLW, feito em react-native aplicado em TypeScript, usando inúmeras bibliotecas react-native. Usamos também uma integração e autenticação com o Aplicativo Discord, em que também utilizaremos o Discord Developer onde criaremos uma application para fazer a integração com a API do Discord, assim fazendo as requisições necessárias para aplicação.
+</p>
+<p>
+Esse projeto tem o intuito de organizar suas jogatinas com seus amigos, marcar horário, dia, jogo que será jogado, o objetivo daquele jogo e muito mais. Tudo isso tem a ajuda e a integração do discord, onde geralmente é o lugar que você e seus amigos se reunem para jogar algum jogo e se divertir. 
 </p>
 
 ## Tech stack & Open-source libraries
