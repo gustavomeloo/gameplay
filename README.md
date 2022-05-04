@@ -1,13 +1,16 @@
 <h1 align="center">Gameplay 🎮</h1>
 
 <p align="center">  
-O "Gameplay" é um App para organizar o que você quer ou vai jogar com seus amigos, ou seja a sua gameplay
+"Gameplay" is an application to organize the games you will play together with your friends.
 </p>
 <p>
-O Gameplay é um projeto em conjunto com a RocketSeat na 6ª edição da NLW - Together, feito em react-native aplicado em TypeScript, usando inúmeras bibliotecas react-native. Usamos também uma integração e autenticação com o Aplicativo Discord, em que também utilizaremos o Discord Developer onde criaremos uma application para fazer a integração com a API do Discord, assim fazendo as requisições necessárias para aplicação.
+Gameplay is a joint project with RocketSeat on the 6th edition of NLW - Together.</br>
+Made in react-native and applied in TypeScript, Gameplay uses many react-native libraries and an integration with Discord App.</br>
+This integration will be done using Discord Developer where we will create an application, in order to use the Discord API and make the necessary requests for the application
 </p>
 <p>
-Esse projeto tem o intuito de organizar suas jogatinas com seus amigos, marcar horário, dia, jogo que será jogado, o objetivo daquele jogo e muito mais. Tudo isso tem a ajuda e a integração do discord, onde geralmente é o lugar que você e seus amigos se reunem para jogar algum jogo e se divertir. 
+This project aims to organize your games with your friends. In the application we will set the time, day, game and much more that we will play.</br>
+All of this has the help of discord, which is usually the place where you and your friends get together to play a game and have fun.
 </p>
 
 ## Tech stack & Open-source libraries
@@ -21,7 +24,8 @@ Esse projeto tem o intuito de organizar suas jogatinas com seus amigos, marcar h
 - [React-Navigation](https://reactnavigation.org/docs/getting-started/) - to navigate between screens
 - [Stack-Navigator](https://reactnavigation.org/docs/native-stack-navigator/) - to use stack navigation
 - [expo svg](https://docs.expo.dev/versions/latest/sdk/svg/) - to turn svg into a component react-native
-- []()
+- [AuthSession](https://docs.expo.dev/versions/latest/sdk/auth-session/#usage-in-standalone-apps) - to create an authentication session
+- [Axios](https://www.npmjs.com/package/axios) - make http requests in discord api
 
 <h1>:rocket: Getting started</h1>
 
