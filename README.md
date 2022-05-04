@@ -20,8 +20,8 @@ Esse projeto tem o intuito de organizar suas jogatinas com seus amigos, marcar h
 - [AsyncStorage](https://reactnative.dev/docs/asyncstorage) - to persist user data
 - [React-Navigation](https://reactnavigation.org/docs/getting-started/) - to navigate between screens
 - [Stack-Navigator](https://reactnavigation.org/docs/native-stack-navigator/) - to use stack navigation
-- [expo svg](https://docs.expo.dev/versions/latest/sdk/svg/) - to turn svg into a component
-- 
+- [expo svg](https://docs.expo.dev/versions/latest/sdk/svg/) - to turn svg into a component react-native
+- []()
 
 <h1>:rocket: Getting started</h1>
 
