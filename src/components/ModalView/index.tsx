@@ -13,9 +13,10 @@ import { styles } from './styles'
 type Props = ModalProps & {
   children : ReactNode
   closeModal: () => void
+  hasSignOut?: boolean
 }
 
-export function ModalView({children, closeModal, ...rest}: Props){
+export function ModalView({hasSignOut = false, children, closeModal, ...rest}: Props){
   return (    
     <Modal
       transparent
@@ -25,10 +26,13 @@ export function ModalView({children, closeModal, ...rest}: Props){
     >
       <TouchableWithoutFeedback onPress={closeModal} >
         <View style={styles.overlay}>
-          <View style={styles.container}>
+          <View style={ hasSignOut ? {marginTop: 600, flex : 1} : styles.container }>
             <Background>
-              <View style={styles.bar}/>
-              {children}
+              {
+                !hasSignOut && 
+                <View style={styles.bar}/> 
+              }
+                {children}
             </Background>
           </View>
         </View>

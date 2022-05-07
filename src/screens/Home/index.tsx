@@ -54,6 +54,7 @@ export function Home () {
 
   useFocusEffect(useCallback(() => {
     loadAppointments()
+    //AsyncStorage.removeItem(COLLECTION_APPOINTMENTS);
   }, [category]))
 
 

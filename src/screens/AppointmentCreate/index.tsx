@@ -1,16 +1,18 @@
-import React, {useState}  from "react";
+import React, {useState, AnimationEventHandler}  from "react";
 import {Feather} from '@expo/vector-icons'
 import 'react-native-get-random-values'
 import {
   v4 as uuidv4
 } from 'uuid'
 import {
+  Alert,
   TouchableOpacity,
   Text,
   View,
   Platform,
   ScrollView,
   KeyboardAvoidingView,
+  ActivityIndicatorComponent
 } from 'react-native'
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -59,22 +61,59 @@ export function AppointmentCreate(){
     setCategory(categoryId)
   }
 
-  async function handleSave() {
-    const newAppointment = {
-      id: uuidv4(),
-      guild,
-      category,
-      date: `${day}/${month} às ${hour}:${minute}h`,
-      description
+  function regexValidation(){
+    const reNumber = /\d/
+    if (!reNumber.test(day) || !reNumber.test(month)){
+      Alert.alert('Erro', 'dia e mês incorretos')
+      return false 
+    }
+    if (!reNumber.test(hour) || !reNumber.test(minute) ){
+      Alert.alert('Erro', 'Hora e Minutos incorretos')
+      return false 
+    }
+    return true
+  }
+
+  function validation() {
+    if (category.length === 0) {
+      Alert.alert('Erro', 'Selecione alguma categoria')
+      return false
     }
 
-    const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS)
+    if (Object.keys(guild).length === 0) {
+      Alert.alert('Erro', 'Selecione uma guilda')
+      return false
+    }
 
-    const appointments = storage ? JSON.parse(storage) : []
+    if(!regexValidation()) return false
 
-    await AsyncStorage.setItem(COLLECTION_APPOINTMENTS, JSON.stringify([...appointments, newAppointment]))
+    if(description.trim().length === 0){
+      Alert.alert('Erro', 'Digite uma descrição')
+      return false
+    }
 
-    navigation.navigate('Home')
+    return true
+
+  }
+
+  async function handleSave() {
+    if(validation()){
+      const newAppointment = {
+        id: uuidv4(),
+        guild,
+        category,
+        date: `${day}/${month} às ${hour}:${minute}h`,
+        description
+      }
+  
+      const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS)
+  
+      const appointments = storage ? JSON.parse(storage) : []
+  
+      await AsyncStorage.setItem(COLLECTION_APPOINTMENTS, JSON.stringify([...appointments, newAppointment]))
+  
+      navigation.navigate('Home')
+    }
   }
   return (
     <KeyboardAvoidingView 
@@ -168,6 +207,8 @@ export function AppointmentCreate(){
                 maxLength={100} 
                 numberOfLines={5} 
                 autoCorrect={false} />
+
+              
               <View style={styles.footer} >
                 <Button 
                   onPress={handleSave}
@@ -186,4 +227,3 @@ export function AppointmentCreate(){
   )
 }
 
-//npm i --save-dev @types/uuid
