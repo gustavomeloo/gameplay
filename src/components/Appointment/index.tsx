@@ -5,14 +5,14 @@ import {
   TouchableOpacity,
   TouchableOpacityProps
 } from 'react-native'
-import { categories } from "../../utils/categories";
-import PlayerSvg from '../../assets/player.svg'
 import CalendarSvg from '../../assets/calendar.svg'
+import PlayerSvg from '../../assets/player.svg'
+import { categories } from "../../utils/categories";
 import { GuildIcon } from "../GuildIcon";
-import { styles } from "./styles";
-import { theme } from "../../global/styles/theme";
 import { GuildProps } from "../Guild";
 import { LinearGradient } from "expo-linear-gradient";
+import { styles } from "./styles";
+import { theme } from "../../global/styles/theme";
 
 
 export type AppointmentProps = {

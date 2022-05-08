@@ -1,10 +1,9 @@
 import React, {ReactNode} from "react";
 import {
-  View,
   Modal,
   ModalProps,
-  TouchableWithoutFeedback
-
+  TouchableWithoutFeedback,
+  View
 } from 'react-native'
 import { Background } from "../Background";
 
@@ -13,10 +12,10 @@ import { styles } from './styles'
 type Props = ModalProps & {
   children : ReactNode
   closeModal: () => void
-  hasSignOut?: boolean
+  isSignOut?: boolean
 }
 
-export function ModalView({hasSignOut = false, children, closeModal, ...rest}: Props){
+export function ModalView({isSignOut = false, children, closeModal, ...rest}: Props){
   return (    
     <Modal
       transparent
@@ -26,10 +25,10 @@ export function ModalView({hasSignOut = false, children, closeModal, ...rest}: P
     >
       <TouchableWithoutFeedback onPress={closeModal} >
         <View style={styles.overlay}>
-          <View style={ hasSignOut ? {marginTop: 600, flex : 1} : styles.container }>
+          <View style={ isSignOut ? {marginTop: 610, flex : 1} : styles.container }>
             <Background>
               {
-                !hasSignOut && 
+                !isSignOut && 
                 <View style={styles.bar}/> 
               }
                 {children}

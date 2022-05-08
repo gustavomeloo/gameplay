@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-import { View, Text, TouchableOpacity, Alert } from 'react-native'
-import { useAuth } from "../../hooks/auth";
+import { Text, TouchableOpacity, View } from 'react-native'
 import { Avatar } from "../Avatar";
 import { ModalView } from "../ModalView";
+import { SignOut } from "../../screens/SignOut";
 import { styles } from "./styles";
-
-
+import { useAuth } from "../../hooks/auth";
 
 export function Profile() {
-  const { user, signOut } = useAuth()
+  const { user } = useAuth()
   const [openSignOutmodal, setOpenSignOutModal] = useState(false)
 
   function handleOpenSignOutModal() {
@@ -20,22 +19,8 @@ export function Profile() {
     setOpenSignOutModal(false)
   }
 
-  function handleSignOut() {
-    Alert.alert('Logout', 'Deseja sair do Gameplay',
-    [
-      {
-        text: 'Não',
-        style: 'cancel'
-      },
-      {
-        text: 'Sim',
-        onPress: () => signOut()
-      }
-    ])
-  }
   return(
     <View style={styles.container} >
-
 
       <TouchableOpacity onPress={handleOpenSignOutModal}>
         <Avatar urlImage={user.avatar} />
@@ -51,8 +36,8 @@ export function Profile() {
         <Text style={styles.message} >Hoje é dia de vitória</Text>
       </View>
 
-      <ModalView visible={openSignOutmodal} closeModal={handleCloseSignOutModal} hasSignOut={true} >
-        <Text>Alo</Text>
+      <ModalView visible={openSignOutmodal} closeModal={handleCloseSignOutModal} isSignOut={true} >
+        <SignOut closeSignOut={handleCloseSignOutModal} />
       </ModalView>
 
     </View>

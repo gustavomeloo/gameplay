@@ -1,16 +1,16 @@
 import React, { ReactNode } from 'react'
 
+import { Feather } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { Feather } from '@expo/vector-icons'
-
 import {
-  View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 } from 'react-native'
+
+import { styles } from './styles'
 import { theme } from '../../global/styles/theme'
-import {styles} from './styles'
 import { useNavigation } from '@react-navigation/native'
 
 
@@ -55,7 +55,6 @@ export function Header({title, action}: Props) {
         <View style={{width : 24}}/>
       }
       
-
     </LinearGradient>
   )
 }

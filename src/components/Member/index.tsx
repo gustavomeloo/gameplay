@@ -4,11 +4,10 @@ import {
   Text,
   View
 } from 'react-native'
-import { theme } from '../../global/styles/theme'
 import { Avatar } from '../Avatar'
 
-import {styles} from './styles'
-
+import { styles } from './styles'
+import { theme } from '../../global/styles/theme'
 
 export type MemberProps = {
   id : string
@@ -52,7 +51,6 @@ export function Member({data}: Props) {
         </View>
 
       </View>
-
 
     </View>
   )

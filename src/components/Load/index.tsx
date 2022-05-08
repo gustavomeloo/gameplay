@@ -4,8 +4,8 @@ import {
   View,
   ActivityIndicator
 } from 'react-native'
-import { theme } from "../../global/styles/theme";
 import { styles } from "./styles";
+import { theme } from "../../global/styles/theme";
 
 export function Load (){
   return(

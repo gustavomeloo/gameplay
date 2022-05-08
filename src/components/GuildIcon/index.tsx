@@ -24,9 +24,9 @@ export function GuildIcon ({guildId, iconId}: Props) {
       {
         iconId ?
         <Image 
-        source={{ uri }}
-        style={styles.image}
-        resizeMode="cover"
+          source={{ uri }}
+          style={styles.image}
+          resizeMode="cover"
         />
         :
         <DiscordSvg width={40} height={40}/>

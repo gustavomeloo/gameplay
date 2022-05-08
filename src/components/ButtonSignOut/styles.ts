@@ -4,12 +4,14 @@ import { theme } from '../../global/styles/theme';
 export const styles = StyleSheet.create({
 
   container : {
-    width : '100%',
+    width : '42%',
     height : 56,
-    backgroundColor : theme.colors.primary,
     borderRadius : 8,
     flexDirection : 'row',
-    alignItems : 'center'
+    alignItems : 'center',
+    borderWidth: 1,
+    borderColor: theme.colors.secondary50,
+    margin : 4
   },
 
   title : {
@@ -18,9 +20,6 @@ export const styles = StyleSheet.create({
     fontSize : 15,
     fontFamily: theme.fonts.text500,
     textAlign : 'center'
-  }
-
-
-
+  },
 
 })

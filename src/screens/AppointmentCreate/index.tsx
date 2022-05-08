@@ -1,4 +1,4 @@
-import React, {useState, AnimationEventHandler}  from "react";
+import React, {useState} from "react";
 import {Feather} from '@expo/vector-icons'
 import 'react-native-get-random-values'
 import {
@@ -6,31 +6,29 @@ import {
 } from 'uuid'
 import {
   Alert,
-  TouchableOpacity,
-  Text,
-  View,
+  KeyboardAvoidingView,
   Platform,
   ScrollView,
-  KeyboardAvoidingView,
-  ActivityIndicatorComponent
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native'
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {COLLECTION_APPOINTMENTS} from '../../configs/database'
-import { theme } from '../../global/styles/theme'
-import { styles } from "./styles";
 import { Background } from "../../components/Background";
-import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
 import { CategorySelect } from "../../components/CategorySelect";
 import { GuildIcon } from "../../components/GuildIcon";
-import { SmallInput } from "../../components/SmallInput";
-import { TextArea } from "../../components/TextArea";
-import { Button } from "../../components/Button";
-import { ModalView } from "../../components/ModalView";
 import { Guilds } from "../Guilds";
 import { GuildProps } from "../../components/Guild";
+import { Header } from "../../components/Header";
+import { ModalView } from "../../components/ModalView";
+import { SmallInput } from "../../components/SmallInput";
+import { styles } from "./styles";
+import { TextArea } from "../../components/TextArea";
+import { theme } from '../../global/styles/theme'
 import { useNavigation } from "@react-navigation/native";
-
 
 export function AppointmentCreate(){
   const [category, setCategory] = useState('')

@@ -24,7 +24,6 @@ export function Home () {
   const [appointments, setAppointments] = useState<AppointmentProps[]>([])
   const navigation = useNavigation()
 
-
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId)
   }
@@ -49,14 +48,11 @@ export function Home () {
 
     setLoading(false)
 
-    
   }
 
   useFocusEffect(useCallback(() => {
     loadAppointments()
-    //AsyncStorage.removeItem(COLLECTION_APPOINTMENTS);
   }, [category]))
-
 
   return (
     <Background>

@@ -1,14 +1,11 @@
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { 
   View,
   Text } from 'react-native'
 
 import { styles } from "./styles";
-import { theme } from "../../global/styles/theme";
 
 type Props = {
-
   title : string
   subtitle: string
 

@@ -1,19 +1,18 @@
 import React from "react";
 import {
-  Alert,
   ActivityIndicator,
+  Alert,
+  Image,
   Text,
-  View,
-  Image
+  View
 } from 'react-native'
 
+import { Background } from "../../components/Background";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import IllustrationImg from '../../assets/illustration.png';
-import {styles} from './styles'
-import { Background } from "../../components/Background";
-import { useAuth } from "../../hooks/auth";
+import { styles } from './styles'
 import { theme } from "../../global/styles/theme";
-
+import { useAuth } from "../../hooks/auth";
 
 export function SignIn () {
 

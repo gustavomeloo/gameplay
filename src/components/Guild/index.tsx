@@ -1,9 +1,9 @@
 import React from 'react'
 
 import {
+  Text,
   TouchableOpacity,
   TouchableOpacityProps,
-  Text,
   View
 } from 'react-native'
 

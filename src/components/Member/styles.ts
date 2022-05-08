@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native'
-import { TouchableHighlight } from 'react-native-gesture-handler'
 import { theme } from '../../global/styles/theme'
 
 export const styles = StyleSheet.create({

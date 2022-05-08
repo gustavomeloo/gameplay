@@ -4,12 +4,12 @@ import {
   View,
   FlatList
 } from 'react-native'
+
+import { api } from "../../services/api";
 import { Guild, GuildProps } from "../../components/Guild";
 import { Load } from "../../components/Load";
 import { ListDivider } from "../../components/ListDivider";
-
 import { styles } from './styles'
-import { api } from "../../services/api";
 
 type Props = {
   handleGuildSelect: (guild: GuildProps) => void
@@ -25,7 +25,6 @@ export function Guilds({ handleGuildSelect }: Props) {
 
   setGuilds(response.data)
   setLoading(false)
-
  }
 
  useEffect(() => {

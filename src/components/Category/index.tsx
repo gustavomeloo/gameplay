@@ -5,11 +5,10 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native'
-import { SvgProps } from "react-native-svg";
 import { LinearGradient } from "expo-linear-gradient";
+import { SvgProps } from "react-native-svg";
 
 import { styles } from "./styles";
-import { categories } from '../../utils/categories'
 import { theme } from "../../global/styles/theme";
 
 type Props = TouchableOpacityProps & {

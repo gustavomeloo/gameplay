@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, TouchableOpacityProps, } from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps, } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";

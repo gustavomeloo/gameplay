@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Text,
   Image,
-  View,
+  Text,
   TouchableOpacity,
   TouchableOpacityProps,
+  View,
 } from 'react-native'
 
 import DiscordImg from '../../assets/discord.png'

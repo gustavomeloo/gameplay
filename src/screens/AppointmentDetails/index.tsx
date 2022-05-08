@@ -1,31 +1,31 @@
 import React, { useState , useEffect} from "react";
 import { useRoute } from "@react-navigation/native";
-import {Fontisto} from '@expo/vector-icons'
+import { Fontisto } from '@expo/vector-icons'
 import * as Linking from 'expo-linking'
 
 import {
-  FlatList,
-  Text,
-  View,
-  ImageBackground,
   Alert,
-  Share,
+  FlatList,
+  ImageBackground,
   Platform,
-  TouchableOpacity
+  Share,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native'
 
-import { Background } from "../../components/Background";
-import { Header } from "../../components/Header";
-import { theme } from "../../global/styles/theme";
-import {styles} from './styles'
-import BannerImg from '../../assets/banner.png'
-import { ListHeader } from "../../components/ListHeader";
-import { Member, MemberProps } from "../../components/Member";
-import { ListDivider } from "../../components/ListDivider";
-import { ButtonIcon } from "../../components/ButtonIcon";
-import { AppointmentProps } from "../../components/Appointment";
 import { api } from "../../services/api";
+import { AppointmentProps } from "../../components/Appointment";
+import { Background } from "../../components/Background";
+import BannerImg from '../../assets/banner.png'
+import { ButtonIcon } from "../../components/ButtonIcon";
+import { Header } from "../../components/Header";
+import { ListDivider } from "../../components/ListDivider";
+import { ListHeader } from "../../components/ListHeader";
 import { Load } from "../../components/Load";
+import { Member, MemberProps } from "../../components/Member";
+import { styles } from './styles'
+import { theme } from "../../global/styles/theme";
 
 type Params = {
   guildSelected: AppointmentProps
@@ -39,7 +39,6 @@ type GuildWidget = {
 
 }
 
-
 export function AppointmentDetails(){
   const [widget, setWidget] = useState<GuildWidget>({} as GuildWidget)
   const [loading, setLoading] = useState(true)
@@ -51,7 +50,6 @@ export function AppointmentDetails(){
     try {
       const response = await api.get(`/guilds/${guildSelected.guild.id}/widget.json`)
       setWidget(response.data)
-
       
     } catch  {
       Alert.alert('Verifique as configurações do servidor. Será que o Widget está habilitado?')
