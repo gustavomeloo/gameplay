@@ -13,6 +13,8 @@ This project aims to organize your games with your friends. In the application w
 All of this has the help of discord, which is usually the place where you and your friends get together to play a game and have fun.
 </p>
 
+<img src="/preview/gameplayRecorder.gif" align="right" width="32%"/>
+
 ## Tech stack & Open-source libraries
 
 - nodeJs version LTS - > https://nodejs.org/en/
@@ -48,3 +50,10 @@ All of this has the help of discord, which is usually the place where you and yo
 ```
 
 ## :iphone: Running mobile or emulator
+```bash
+  # Init app:
+  $ [expo] start
+
+  # Run device/emulator:
+  install expo go and Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+```
